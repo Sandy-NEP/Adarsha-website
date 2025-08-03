@@ -371,7 +371,28 @@
 }
 
 .form-textarea {
-  @apply w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-300 resize-vertical min-h-[120px];
+  @apply w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-300 resize-y min-h-[120px];
+}
+
+/* Section layout utilities */
+.section-header {
+  @apply text-center mb-16;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary;
+}
+
+.section-subtitle {
+  @apply text-lg text-muted-foreground max-w-3xl mx-auto;
+}
+
+.feature-grid {
+  @apply grid md:grid-cols-2 lg:grid-cols-4 gap-8;
+}
+
+.staff-grid {
+  @apply grid md:grid-cols-2 lg:grid-cols-3 gap-8;
 }
 
 /* Enhanced hero section */
@@ -426,16 +447,24 @@
 }
 
 .gallery-item {
-  @apply relative overflow-hidden rounded-xl group cursor-pointer;
+  @apply relative overflow-hidden rounded-xl cursor-pointer;
   aspect-ratio: 4/3;
 }
 
 .gallery-image {
-  @apply w-full h-full object-cover transition-transform duration-500 group-hover:scale-110;
+  @apply w-full h-full object-cover transition-transform duration-500;
+}
+
+.gallery-item:hover .gallery-image {
+  @apply scale-110;
 }
 
 .gallery-overlay {
-  @apply absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center;
+  @apply absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 flex items-center justify-center;
+}
+
+.gallery-item:hover .gallery-overlay {
+  @apply opacity-100;
 }
 
 /* Professional footer styles */
@@ -511,14 +540,43 @@
   z-index: 1;
 }
 .hero-content {
+  @apply relative container mx-auto px-4 pt-32 pb-20 min-h-screen flex flex-col justify-center;
   position: relative;
   z-index: 2;
+}
+
+.hero-title {
+  @apply text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary;
+}
+
+.hero-subtitle {
+  @apply text-xl md:text-2xl text-muted-foreground mb-8;
+}
+
+.hero-cta {
+  @apply mb-12;
+}
+
+.stats-container {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6 text-center;
+}
+
+.stat-item {
+  @apply p-4 rounded-lg bg-card/50 backdrop-blur border border-border;
+}
+
+.stat-number {
+  @apply text-2xl font-bold text-primary mb-2;
+}
+
+.stat-label {
+  @apply text-muted-foreground text-sm;
 }
 
 .project-card-image {
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.group:hover .project-card-image {
+.enhanced-card:hover .project-card-image {
   transform: scale(1.05);
 }
 

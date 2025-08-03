@@ -11,16 +11,16 @@ const Staff = ({ data }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="section-header"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">Our Faculty & Staff</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <h2 className="section-title">Our Faculty & Staff</h2>
+          <p className="section-subtitle">
             Meet our dedicated team of experienced educators and administrators committed to providing 
             quality education and nurturing student growth.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="staff-grid">
           {data.staff.map((member, index) => (
             <motion.div
               key={index}
@@ -28,7 +28,7 @@ const Staff = ({ data }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-6 rounded-xl bg-card/50 backdrop-blur border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
+              className="enhanced-card"
             >
               <div className="text-center mb-6">
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
@@ -59,8 +59,8 @@ const Staff = ({ data }) => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <div className="p-8 rounded-xl bg-card/30 backdrop-blur border border-border">
-            <h3 className="text-2xl font-bold mb-4 text-gradient">Join Our Team</h3>
+          <div className="enhanced-card">
+            <h3 className="section-title">Join Our Team</h3>
             <p className="text-muted-foreground mb-6">
               We are always looking for passionate educators to join our team. 
               If you are dedicated to making a difference in students' lives, we'd love to hear from you.

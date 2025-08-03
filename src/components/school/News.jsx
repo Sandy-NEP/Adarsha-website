@@ -13,8 +13,8 @@ const News = ({ data }) => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">News & Events</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <h2 className="section-title">News & Events</h2>
+          <p className="section-subtitle">
             Stay updated with the latest happenings, achievements, and events at Adarsha Secondary School.
           </p>
         </motion.div>
@@ -27,7 +27,7 @@ const News = ({ data }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="rounded-xl bg-card/50 backdrop-blur border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg overflow-hidden"
+              className="enhanced-card overflow-hidden"
             >
               <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                 <Newspaper className="h-16 w-16 text-primary" />
@@ -53,10 +53,10 @@ const News = ({ data }) => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="grid md:grid-cols-2 gap-8"
         >
-          <div className="p-8 rounded-xl bg-card/30 backdrop-blur border border-border">
+          <div className="enhanced-card">
             <div className="flex items-center gap-3 mb-4">
               <Trophy className="h-8 w-8 text-primary" />
-              <h3 className="text-2xl font-bold text-gradient">Recent Achievements</h3>
+              <h3 className="section-title">Recent Achievements</h3>
             </div>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
@@ -74,10 +74,10 @@ const News = ({ data }) => {
             </ul>
           </div>
 
-          <div className="p-8 rounded-xl bg-card/30 backdrop-blur border border-border">
+          <div className="enhanced-card">
             <div className="flex items-center gap-3 mb-4">
               <Calendar className="h-8 w-8 text-primary" />
-              <h3 className="text-2xl font-bold text-gradient">Upcoming Events</h3>
+              <h3 className="section-title">Upcoming Events</h3>
             </div>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
