@@ -1,0 +1,366 @@
+/* index.css  */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Unbounded:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=VT323&display=swap'); /* Cyber fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Orbitron&display=swap'); /* Solar fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap'); /* Oceanic fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Audiowide&display=swap'); /* Retro fonts */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root, .theme-default {
+    --background: 257 100% 6%; /* #0A0020 */
+    --foreground: 240 50% 95%; /* Light gray for text */
+    --card: 257 50% 12%; /* Darker purple for cards */
+    --card-foreground: 240 50% 95%;
+    --popover: 257 100% 6%;
+    --popover-foreground: 240 50% 95%;
+    --primary: 270 80% 60%; /* Vibrant Purple */
+    --primary-foreground: 240 50% 95%;
+    --secondary: 330 80% 60%; /* Vibrant Pink */
+    --secondary-foreground: 240 50% 95%;
+    --muted: 257 30% 25%; /* Muted purple */
+    --muted-foreground: 240 30% 70%;
+    --accent: 300 80% 65%; /* A mix, leaning pink/purple */
+    --accent-foreground: 240 50% 95%;
+    --destructive: 0 70% 55%; /* Red for destructive actions */
+    --destructive-foreground: 240 50% 95%;
+    --border: 257 40% 20%; /* Border for cards, inputs */
+    --input: 257 40% 15%; /* Input background */
+    --ring: 270 80% 70%; /* Lighter Purple for focus rings */
+    --radius: 0.75rem; 
+    --text-gradient-from: theme('colors.purple.400');
+    --text-gradient-via: theme('colors.pink.500');
+    --text-gradient-to: theme('colors.orange.400');
+    --button-gradient-from: theme('colors.purple.600');
+    --button-gradient-to: theme('colors.pink.600');
+    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Unbounded', cursive;
+  }
+
+  .theme-cyber {
+    --background: 220 30% 5%; /* Very dark desaturated blue */
+    --foreground: 120 100% 85%; /* Bright green */
+    --card: 220 25% 10%; 
+    --card-foreground: 120 100% 85%;
+    --popover: 220 30% 5%;
+    --popover-foreground: 120 100% 85%;
+    --primary: 120 100% 50%; /* Bright Green */
+    --primary-foreground: 220 30% 10%;
+    --secondary: 120 80% 60%; /* Lighter Green */
+    --secondary-foreground: 220 30% 10%;
+    --muted: 220 20% 15%;
+    --muted-foreground: 120 70% 70%;
+    --accent: 120 90% 55%;
+    --accent-foreground: 220 30% 10%;
+    --destructive: 0 100% 50%; /* Bright Red */
+    --destructive-foreground: 220 30% 10%;
+    --border: 120 50% 30%;
+    --input: 220 20% 8%;
+    --ring: 120 100% 60%;
+    --radius: 0.25rem; /* Sharper edges */
+    --text-gradient-from: theme('colors.green.400');
+    --text-gradient-via: theme('colors.lime.400');
+    --text-gradient-to: theme('colors.emerald.500');
+    --button-gradient-from: theme('colors.green.600');
+    --button-gradient-to: theme('colors.emerald.700');
+    --font-body: 'Courier Prime', monospace;
+    --font-heading: 'VT323', monospace;
+  }
+
+  .theme-solar {
+    --background: 25 15% 10%; /* Dark warm gray / brown */
+    --foreground: 35 80% 90%; /* Light warm yellow/orange */
+    --card: 25 20% 15%;
+    --card-foreground: 35 80% 90%;
+    --popover: 25 15% 10%;
+    --popover-foreground: 35 80% 90%;
+    --primary: 30 100% 55%; /* Bright Orange */
+    --primary-foreground: 25 15% 5%;
+    --secondary: 45 100% 50%; /* Bright Yellow */
+    --secondary-foreground: 25 15% 5%;
+    --muted: 25 25% 20%;
+    --muted-foreground: 35 60% 70%;
+    --accent: 35 90% 60%;
+    --accent-foreground: 25 15% 5%;
+    --destructive: 0 80% 50%; /* Warm Red */
+    --destructive-foreground: 25 15% 5%;
+    --border: 30 40% 30%;
+    --input: 25 20% 12%;
+    --ring: 30 100% 65%;
+    --radius: 0.5rem;
+    --text-gradient-from: theme('colors.orange.400');
+    --text-gradient-via: theme('colors.yellow.400');
+    --text-gradient-to: theme('colors.amber.500');
+    --button-gradient-from: theme('colors.orange.600');
+    --button-gradient-to: theme('colors.amber.700');
+    --font-body: 'Roboto', sans-serif;
+    --font-heading: 'Orbitron', sans-serif;
+  }
+
+  .theme-oceanic {
+    --background: 210 50% 10%; /* Deep Blue */
+    --foreground: 190 70% 90%; /* Light Cyan/White */
+    --card: 210 45% 15%;
+    --card-foreground: 190 70% 90%;
+    --popover: 210 50% 10%;
+    --popover-foreground: 190 70% 90%;
+    --primary: 200 100% 50%; /* Bright Cyan */
+    --primary-foreground: 210 50% 5%;
+    --secondary: 220 80% 60%; /* Bright Blue */
+    --secondary-foreground: 210 50% 5%;
+    --muted: 210 35% 20%;
+    --muted-foreground: 190 50% 70%;
+    --accent: 195 90% 55%;
+    --accent-foreground: 210 50% 5%;
+    --destructive: 350 80% 55%; /* Coral Red */
+    --destructive-foreground: 210 50% 5%;
+    --border: 200 40% 30%;
+    --input: 210 40% 12%;
+    --ring: 200 100% 60%;
+    --radius: 1rem; /* Softer edges */
+    --text-gradient-from: theme('colors.cyan.400');
+    --text-gradient-via: theme('colors.sky.400');
+    --text-gradient-to: theme('colors.blue.500');
+    --button-gradient-from: theme('colors.cyan.600');
+    --button-gradient-to: theme('colors.blue.700');
+    --font-body: 'Lato', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+  }
+
+  .theme-monochrome {
+    --background: 0 0% 10%; /* Dark Gray */
+    --foreground: 0 0% 90%; /* Light Gray */
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 90%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 90%;
+    --primary: 0 0% 70%; /* Mid Gray */
+    --primary-foreground: 0 0% 5%;
+    --secondary: 0 0% 50%; /* Darker Mid Gray */
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 0% 80%;
+    --accent-foreground: 0 0% 5%;
+    --destructive: 0 0% 40%; /* Dark Reddish Gray */
+    --destructive-foreground: 0 0% 95%;
+    --border: 0 0% 30%;
+    --input: 0 0% 12%;
+    --ring: 0 0% 75%;
+    --radius: 0.375rem;
+    --text-gradient-from: theme('colors.gray.400');
+    --text-gradient-via: theme('colors.gray.500');
+    --text-gradient-to: theme('colors.gray.600');
+    --button-gradient-from: theme('colors.gray.700');
+    --button-gradient-to: theme('colors.gray.800');
+    --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-heading: 'Arial Black', Gadget, sans-serif;
+  }
+
+  .theme-retro {
+    --background: 260 50% 8%; /* Very Dark Purple/Blue */
+    --foreground: 330 100% 85%; /* Bright Neon Pink */
+    --card: 260 45% 12%;
+    --card-foreground: 330 100% 85%;
+    --popover: 260 50% 8%;
+    --popover-foreground: 330 100% 85%;
+    --primary: 330 100% 60%; /* Neon Pink */
+    --primary-foreground: 260 50% 10%;
+    --secondary: 180 100% 50%; /* Neon Cyan */
+    --secondary-foreground: 260 50% 10%;
+    --muted: 260 35% 18%;
+    --muted-foreground: 300 70% 70%; /* Neon Purple */
+    --accent: 280 100% 65%; /* Neon Purple */
+    --accent-foreground: 260 50% 10%;
+    --destructive: 45 100% 55%; /* Neon Yellow/Orange */
+    --destructive-foreground: 260 50% 10%;
+    --border: 300 60% 40%;
+    --input: 260 40% 10%;
+    --ring: 330 100% 70%;
+    --radius: 0.5rem;
+    --text-gradient-from: theme('colors.pink.400');
+    --text-gradient-via: theme('colors.purple.500');
+    --text-gradient-to: theme('colors.cyan.400');
+    --button-gradient-from: theme('colors.pink.600');
+    --button-gradient-to: theme('colors.purple.700');
+    --font-body: 'Press Start 2P', cursive;
+    --font-heading: 'Audiowide', cursive;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .font-inter { 
+    font-family: 'Inter', sans-serif;
+  }
+  .font-unbounded { 
+    font-family: 'Unbounded', cursive;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.6);
+  border-radius: 10px;
+  border: 1px solid hsl(var(--background));
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+.glass-card {
+  background: hsl(var(--card) / 0.6); 
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid hsl(var(--border) / 0.5); 
+  border-radius: var(--radius);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r;
+  background-image: linear-gradient(to right, var(--text-gradient-from), var(--text-gradient-via), var(--text-gradient-to));
+}
+
+.button-gradient {
+  @apply bg-gradient-to-r text-primary-foreground transition-all duration-300;
+  background-image: linear-gradient(to right, var(--button-gradient-from), var(--button-gradient-to));
+}
+.button-gradient:hover {
+  filter: brightness(1.15);
+}
+
+
+.section-padding {
+  @apply py-16 md:py-24 lg:py-32;
+}
+
+.container-custom {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+}
+
+.hero-bg-image {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.hero-bg-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, hsl(var(--background) / 0.5) 0%, hsl(var(--background) / 0.9) 70%, hsl(var(--background)) 100%);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.project-card-image {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.group:hover .project-card-image {
+  transform: scale(1.05);
+}
+
+.skill-icon-container {
+  @apply bg-card p-4 rounded-lg flex justify-center items-center transition-all duration-300 hover:bg-primary/20 hover:scale-105;
+}
+.skill-icon {
+  @apply h-10 w-10 text-primary;
+}
+
+*:focus-visible {
+  @apply outline-none ring-2 ring-offset-2 ring-ring ring-offset-background;
+}
+
+.rdc-dialog-content {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.rdc-dialog-overlay {
+  background: hsl(var(--background) / 0.7) !important;
+  backdrop-filter: blur(4px);
+}
+
+/* Theme specific overrides if needed */
+.theme-cyber .font-unbounded { font-family: var(--font-heading); }
+.theme-solar .font-unbounded { font-family: var(--font-heading); }
+.theme-oceanic .font-unbounded { font-family: var(--font-heading); }
+.theme-monochrome .font-unbounded { font-family: var(--font-heading); }
+.theme-retro .font-unbounded { font-family: var(--font-heading); }
+
+.theme-cyber .font-inter { font-family: var(--font-body); }
+.theme-solar .font-inter { font-family: var(--font-body); }
+.theme-oceanic .font-inter { font-family: var(--font-body); }
+.theme-monochrome .font-inter { font-family: var(--font-body); }
+.theme-retro .font-inter { font-family: var(--font-body); }
+
+/* Digital rain for cyber theme */
+.theme-cyber #hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(0deg, transparent 24%, hsl(var(--primary)/0.1) 25%, hsl(var(--primary)/0.1) 26%, transparent 27%, transparent 74%, hsl(var(--primary)/0.1) 75%, hsl(var(--primary)/0.1) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, hsl(var(--primary)/0.05) 25%, hsl(var(--primary)/0.05) 26%, transparent 27%, transparent 74%, hsl(var(--primary)/0.05) 75%, hsl(var(--primary)/0.05) 76%, transparent 77%, transparent);
+  background-size: 30px 30px;
+  animation: digitalRain 1s linear infinite;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+@keyframes digitalRain {
+  0% { background-position: 0 0; }
+  100% { background-position: 30px 60px; }
+}
+
+/* Retro wave lines for retro theme */
+.theme-retro #hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, hsl(var(--secondary)/0.2) 1px, transparent 1px),
+              linear-gradient(to top, hsl(var(--accent)/0.15) 2px, transparent 2px);
+  background-size: 100% 50px, 100% 100px;
+  opacity: 0.5;
+  z-index: 0;
+  mask-image: linear-gradient(to top, black 30%, transparent 100%);
+}
