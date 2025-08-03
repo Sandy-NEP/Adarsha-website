@@ -11,31 +11,31 @@
 
 @layer base {
   :root, .theme-default {
-    --background: 257 100% 6%; /* #0A0020 */
-    --foreground: 240 50% 95%; /* Light gray for text */
-    --card: 257 50% 12%; /* Darker purple for cards */
-    --card-foreground: 240 50% 95%;
-    --popover: 257 100% 6%;
-    --popover-foreground: 240 50% 95%;
-    --primary: 270 80% 60%; /* Vibrant Purple */
-    --primary-foreground: 240 50% 95%;
-    --secondary: 330 80% 60%; /* Vibrant Pink */
-    --secondary-foreground: 240 50% 95%;
-    --muted: 257 30% 25%; /* Muted purple */
-    --muted-foreground: 240 30% 70%;
-    --accent: 300 80% 65%; /* A mix, leaning pink/purple */
-    --accent-foreground: 240 50% 95%;
-    --destructive: 0 70% 55%; /* Red for destructive actions */
-    --destructive-foreground: 240 50% 95%;
-    --border: 257 40% 20%; /* Border for cards, inputs */
-    --input: 257 40% 15%; /* Input background */
-    --ring: 270 80% 70%; /* Lighter Purple for focus rings */
+    --background: 0 0% 100%; /* White background */
+    --foreground: 0 0% 15%; /* Dark text for readability */
+    --card: 0 0% 98%; /* Very light gray for cards */
+    --card-foreground: 0 0% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+    --primary: 358 70% 33%; /* Red from las.edu.np */
+    --primary-foreground: 0 0% 100%; /* White text on red */
+    --secondary: 358 50% 45%; /* Lighter red for secondary */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 96%; /* Light gray for muted elements */
+    --muted-foreground: 0 0% 45%;
+    --accent: 358 60% 40%; /* Accent red */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 70% 50%; /* Keep red for destructive actions */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%; /* Light border */
+    --input: 0 0% 98%; /* Light input background */
+    --ring: 358 70% 33%; /* Red focus rings */
     --radius: 0.75rem; 
-    --text-gradient-from: theme('colors.purple.400');
-    --text-gradient-via: theme('colors.pink.500');
-    --text-gradient-to: theme('colors.orange.400');
-    --button-gradient-from: theme('colors.purple.600');
-    --button-gradient-to: theme('colors.pink.600');
+    --text-gradient-from: theme('colors.red.600');
+    --text-gradient-via: theme('colors.red.500');
+    --text-gradient-to: theme('colors.red.700');
+    --button-gradient-from: theme('colors.red.600');
+    --button-gradient-to: theme('colors.red.700');
     --font-body: 'Inter', sans-serif;
     --font-heading: 'Unbounded', cursive;
   }
@@ -234,6 +234,266 @@
   background: hsl(var(--primary));
 }
 
+/* Enhanced animations and effects */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Enhanced card styles */
+.enhanced-card {
+  @apply bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl p-6 transition-all duration-300;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.enhanced-card:hover {
+  @apply border-primary/30 shadow-lg;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Professional button styles */
+.btn-primary {
+  @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300;
+  box-shadow: 0 4px 14px 0 hsl(var(--primary) / 0.3);
+}
+
+.btn-primary:hover {
+  @apply bg-primary/90;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 hsl(var(--primary) / 0.4);
+}
+
+.btn-secondary {
+  @apply bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300;
+  border: 1px solid hsl(var(--border));
+}
+
+.btn-secondary:hover {
+  @apply bg-secondary/90 border-primary/30;
+  transform: translateY(-1px);
+}
+
+/* Enhanced navigation styles */
+.nav-link {
+  @apply text-foreground/80 hover:text-primary transition-colors duration-300 relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: hsl(var(--primary));
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Professional section headers */
+.section-header {
+  @apply text-center mb-12;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold mb-4 text-gradient;
+}
+
+.section-subtitle {
+  @apply text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed;
+}
+
+/* Enhanced grid layouts */
+.feature-grid {
+  @apply grid gap-6 md:gap-8;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.staff-grid {
+  @apply grid gap-6 md:gap-8;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Professional form styles */
+.form-input {
+  @apply w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-300;
+}
+
+.form-textarea {
+  @apply w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-300 resize-y min-h-[120px];
+}
+
+/* Section layout utilities */
+.section-header {
+  @apply text-center mb-16;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary;
+}
+
+.section-subtitle {
+  @apply text-lg text-muted-foreground max-w-3xl mx-auto;
+}
+
+.feature-grid {
+  @apply grid md:grid-cols-2 lg:grid-cols-4 gap-8;
+}
+
+.staff-grid {
+  @apply grid md:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+/* Enhanced hero section */
+.hero-section {
+  @apply relative min-h-screen flex items-center justify-center;
+  background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--card)) 100%);
+}
+
+.hero-content {
+  @apply text-center max-w-4xl mx-auto px-4;
+}
+
+.hero-title {
+  @apply text-4xl md:text-6xl font-bold mb-6 text-gradient;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+  @apply text-xl md:text-2xl text-muted-foreground mb-8;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-cta {
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+/* Professional stats section */
+.stats-container {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8;
+}
+
+.stat-item {
+  @apply text-center p-6 bg-card/50 backdrop-blur-sm rounded-xl border border-border/50 transition-all duration-300;
+}
+
+.stat-item:hover {
+  @apply border-primary/30 transform scale-105;
+}
+
+.stat-number {
+  @apply text-3xl md:text-4xl font-bold text-primary mb-2;
+}
+
+.stat-label {
+  @apply text-sm text-muted-foreground uppercase tracking-wide;
+}
+
+/* Enhanced gallery styles */
+.gallery-grid {
+  @apply grid gap-4 md:gap-6;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.gallery-item {
+  @apply relative overflow-hidden rounded-xl cursor-pointer;
+  aspect-ratio: 4/3;
+}
+
+.gallery-image {
+  @apply w-full h-full object-cover transition-transform duration-500;
+}
+
+.gallery-item:hover .gallery-image {
+  @apply scale-110;
+}
+
+.gallery-overlay {
+  @apply absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 flex items-center justify-center;
+}
+
+.gallery-item:hover .gallery-overlay {
+  @apply opacity-100;
+}
+
+/* Professional footer styles */
+.footer-section {
+  @apply bg-card/30 backdrop-blur-sm border-t border-border/50;
+}
+
+/* Loading animations */
+.loading-shimmer {
+  background: linear-gradient(90deg, transparent, hsl(var(--muted)), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .hero-title {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  .section-title {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  .enhanced-card {
+    @apply p-4;
+  }
+}
+
 .glass-card {
   background: hsl(var(--card) / 0.6); 
   backdrop-filter: blur(12px) saturate(150%);
@@ -280,14 +540,43 @@
   z-index: 1;
 }
 .hero-content {
+  @apply relative container mx-auto px-4 pt-32 pb-20 min-h-screen flex flex-col justify-center;
   position: relative;
   z-index: 2;
+}
+
+.hero-title {
+  @apply text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary;
+}
+
+.hero-subtitle {
+  @apply text-xl md:text-2xl text-muted-foreground mb-8;
+}
+
+.hero-cta {
+  @apply mb-12;
+}
+
+.stats-container {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6 text-center;
+}
+
+.stat-item {
+  @apply p-4 rounded-lg bg-card/50 backdrop-blur border border-border;
+}
+
+.stat-number {
+  @apply text-2xl font-bold text-primary mb-2;
+}
+
+.stat-label {
+  @apply text-muted-foreground text-sm;
 }
 
 .project-card-image {
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.group:hover .project-card-image {
+.enhanced-card:hover .project-card-image {
   transform: scale(1.05);
 }
 

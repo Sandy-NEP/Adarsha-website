@@ -5,14 +5,14 @@ import { ArrowRight } from "lucide-react";
 
 const Hero = ({ data }) => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-background to-background/95">
+    <section className="hero-section">
       <div className="absolute inset-0 overflow-hidden">
         <img  alt="School building with students" className="w-full h-full object-cover opacity-1" src="public/adarsha.png" />
       </div>
       
       <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background"></div>
 
-      <div className="relative container mx-auto px-4 pt-32 pb-20 min-h-screen flex flex-col justify-center">
+      <div className="hero-content">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ const Hero = ({ data }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary"
+            className="hero-title"
           >
             {data.name}
           </motion.h1>
@@ -41,7 +41,7 @@ const Hero = ({ data }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-8"
+            className="hero-subtitle"
           >
             {data.tagline}
           </motion.p>
@@ -50,43 +50,40 @@ const Hero = ({ data }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="hero-cta flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8"
+            <button
+              className="btn-primary"
               onClick={() => document.getElementById("about").scrollIntoView({ behavior: "smooth" })}
             >
               Learn More
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary/10"
+            </button>
+            <button
+              className="btn-secondary"
               onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}
             >
               Contact Us
-            </Button>
+            </button>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center"
+            className="stats-container mt-12"
           >
-            <div className="p-4 rounded-lg bg-card/50 backdrop-blur">
-              <p className="text-2xl font-bold text-primary mb-2">{data.enrollment}</p>
-              <p className="text-muted-foreground">Students Enrolled</p>
+            <div className="stat-item">
+              <p className="stat-number">{data.enrollment}</p>
+              <p className="stat-label">Students Enrolled</p>
             </div>
-            <div className="p-4 rounded-lg bg-card/50 backdrop-blur">
-              <p className="text-2xl font-bold text-primary mb-2">Since {data.established}</p>
-              <p className="text-muted-foreground">Years of Excellence</p>
+            <div className="stat-item">
+              <p className="stat-number">Since {data.established}</p>
+              <p className="stat-label">Years of Excellence</p>
             </div>
-            <div className="p-4 rounded-lg bg-card/50 backdrop-blur">
-              <p className="text-2xl font-bold text-primary mb-2">{data.levels}</p>
-              <p className="text-muted-foreground">Education Levels</p>
+            <div className="stat-item">
+              <p className="stat-number">{data.levels}</p>
+              <p className="stat-label">Education Levels</p>
             </div>
           </motion.div>
         </motion.div>

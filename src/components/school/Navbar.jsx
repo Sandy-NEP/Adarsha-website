@@ -21,6 +21,10 @@ const Navbar = ({ data, currentTheme }) => {
     { name: "About", href: "#about" },
     { name: "Facilities", href: "#facilities" },
     { name: "Academics", href: "#academics" },
+    { name: "Staff", href: "#staff" },
+    { name: "News", href: "#news" },
+    { name: "Admissions", href: "#admissions" },
+    { name: "Alumni", href: "#alumni" },
     { name: "Gallery", href: "#gallery" },
     { name: "Contact", href: "#contact" },
   ];

@@ -34,16 +34,16 @@ const About = ({ data }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="section-header"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">About Our School</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <h2 className="section-title">About Our School</h2>
+          <p className="section-subtitle">
             Adarsha Secondary School, located in Sanothimi, Madhyapur Thimi Municipality, 
             is committed to providing quality education and shaping the future leaders of tomorrow.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="feature-grid mb-16">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -51,7 +51,7 @@ const About = ({ data }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-6 rounded-xl bg-card/50 backdrop-blur border border-border hover:border-primary/50 transition-colors"
+              className="enhanced-card"
             >
               <div className="text-primary mb-4">{feature.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
@@ -77,26 +77,26 @@ const About = ({ data }) => {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-bold text-gradient">Our Vision</h3>
+            <h3 className="section-title">Our Vision</h3>
             <p className="text-muted-foreground">
               To be a leading educational institution that nurtures academic excellence, 
               character development, and innovative thinking in our students.
             </p>
 
-            <h3 className="text-2xl font-bold text-gradient">Our Mission</h3>
+            <h3 className="section-title">Our Mission</h3>
             <p className="text-muted-foreground">
               To provide comprehensive education that empowers students with knowledge, 
               skills, and values necessary for their success in the modern world.
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="p-4 rounded-lg bg-card/50 backdrop-blur border border-border">
-                <p className="text-2xl font-bold text-primary mb-1">{data.established}</p>
-                <p className="text-sm text-muted-foreground">Established</p>
+              <div className="stat-item">
+                <p className="stat-number">{data.established}</p>
+                <p className="stat-label">Established</p>
               </div>
-              <div className="p-4 rounded-lg bg-card/50 backdrop-blur border border-border">
-                <p className="text-2xl font-bold text-primary mb-1">NEB</p>
-                <p className="text-sm text-muted-foreground">Affiliated</p>
+              <div className="stat-item">
+                <p className="stat-number">NEB</p>
+                <p className="stat-label">Affiliated</p>
               </div>
             </div>
           </motion.div>
