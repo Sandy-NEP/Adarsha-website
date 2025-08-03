@@ -11,31 +11,31 @@
 
 @layer base {
   :root, .theme-default {
-    --background: 257 100% 6%; /* #0A0020 */
-    --foreground: 240 50% 95%; /* Light gray for text */
-    --card: 257 50% 12%; /* Darker purple for cards */
-    --card-foreground: 240 50% 95%;
-    --popover: 257 100% 6%;
-    --popover-foreground: 240 50% 95%;
-    --primary: 270 80% 60%; /* Vibrant Purple */
-    --primary-foreground: 240 50% 95%;
-    --secondary: 330 80% 60%; /* Vibrant Pink */
-    --secondary-foreground: 240 50% 95%;
-    --muted: 257 30% 25%; /* Muted purple */
-    --muted-foreground: 240 30% 70%;
-    --accent: 300 80% 65%; /* A mix, leaning pink/purple */
-    --accent-foreground: 240 50% 95%;
-    --destructive: 0 70% 55%; /* Red for destructive actions */
-    --destructive-foreground: 240 50% 95%;
-    --border: 257 40% 20%; /* Border for cards, inputs */
-    --input: 257 40% 15%; /* Input background */
-    --ring: 270 80% 70%; /* Lighter Purple for focus rings */
+    --background: 0 0% 100%; /* White background */
+    --foreground: 0 0% 15%; /* Dark text for readability */
+    --card: 0 0% 98%; /* Very light gray for cards */
+    --card-foreground: 0 0% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+    --primary: 358 70% 33%; /* Red from las.edu.np */
+    --primary-foreground: 0 0% 100%; /* White text on red */
+    --secondary: 358 50% 45%; /* Lighter red for secondary */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 96%; /* Light gray for muted elements */
+    --muted-foreground: 0 0% 45%;
+    --accent: 358 60% 40%; /* Accent red */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 70% 50%; /* Keep red for destructive actions */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%; /* Light border */
+    --input: 0 0% 98%; /* Light input background */
+    --ring: 358 70% 33%; /* Red focus rings */
     --radius: 0.75rem; 
-    --text-gradient-from: theme('colors.purple.400');
-    --text-gradient-via: theme('colors.pink.500');
-    --text-gradient-to: theme('colors.orange.400');
-    --button-gradient-from: theme('colors.purple.600');
-    --button-gradient-to: theme('colors.pink.600');
+    --text-gradient-from: theme('colors.red.600');
+    --text-gradient-via: theme('colors.red.500');
+    --text-gradient-to: theme('colors.red.700');
+    --button-gradient-from: theme('colors.red.600');
+    --button-gradient-to: theme('colors.red.700');
     --font-body: 'Inter', sans-serif;
     --font-heading: 'Unbounded', cursive;
   }
