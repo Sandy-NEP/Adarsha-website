@@ -142,7 +142,7 @@ const schoolData: SchoolData = {
     address: "Ward No. 2, Jatigaal, Madhyapur Thimi Municipality",
   },
   mapUrl: "https://g.co/kgs/sC5ktv2",
-  logo: "public/logo.png",
+  logo: "/logo.png",
   heroImage: "https://storage.googleapis.com/hostinger-horizons-assets-prod/23f50b9b-3bcd-4f41-a441-8351c3cfd821/51c6f2f6615cf6ba3907064289a7cfbc.jpg",
   facilities: [
     { name: "Modern Classrooms", description: "Well-equipped classrooms with smart boards and interactive learning tools" },
@@ -177,8 +177,8 @@ const schoolData: SchoolData = {
   gallery: [
     { src: "https://storage.googleapis.com/hostinger-horizons-assets-prod/23f50b9b-3bcd-4f41-a441-8351c3cfd821/4428987fca76639fea5e98e5a6c2871c.jpg", alt: "School Logo", category: "Infrastructure" },
     { src: "https://storage.googleapis.com/hostinger-horizons-assets-prod/23f50b9b-3bcd-4f41-a441-8351c3cfd821/51c6f2f6615cf6ba3907064289a7cfbc.jpg", alt: "School Building", category: "Infrastructure" },
-    { src: "public/assembly.jpg", alt: "Morning Assembly", category: "Academic Activities" },
-    { src: "public/adarsha.png", alt: "School Campus", category: "Infrastructure" }
+    { src: "/assembly.jpg", alt: "Morning Assembly", category: "Academic Activities" },
+    { src: "/adarsha.png", alt: "School Campus", category: "Infrastructure" }
   ],
   staff: [
     {
@@ -186,21 +186,21 @@ const schoolData: SchoolData = {
       position: "Principal",
       qualification: "M.Ed. in Educational Leadership",
       experience: "15+ years in education",
-      image: "public/staff/principal.jpg"
+      image: "/staff/principal.jpg"
     },
     {
       name: "Mrs. Sita Devi Maharjan",
       position: "Vice Principal",
       qualification: "M.A. in English Literature",
       experience: "12+ years in teaching",
-      image: "public/staff/vice-principal.jpg"
+      image: "/staff/vice-principal.jpg"
     },
     {
       name: "Mr. Ram Bahadur Tamang",
       position: "Head of Science Department",
       qualification: "M.Sc. in Physics",
       experience: "10+ years in science education",
-      image: "public/staff/science-head.jpg"
+      image: "/staff/science-head.jpg"
     }
   ],
   news: [
