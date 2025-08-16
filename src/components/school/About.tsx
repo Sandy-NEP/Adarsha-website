@@ -2,7 +2,16 @@ import React from "react";
 import { motion } from "framer-motion";
 import { GraduationCap, Users, Trophy, Target } from "lucide-react";
 
-const About = ({ data }) => {
+interface SchoolData {
+  established: string;
+}
+
+interface AboutProps {
+  data: SchoolData;
+  currentTheme?: string;
+}
+
+const About: React.FC<AboutProps> = ({ data }) => {
   const features = [
     {
       icon: <GraduationCap className="h-8 w-8" />,

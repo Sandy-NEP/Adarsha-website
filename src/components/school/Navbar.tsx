@@ -4,7 +4,18 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const Navbar = ({ data, currentTheme }) => {
+interface SchoolData {
+  name: string;
+  tagline: string;
+  logo: string;
+}
+
+interface NavbarProps {
+  data: SchoolData;
+  currentTheme?: string;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ data, currentTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -65,7 +76,7 @@ const Navbar = ({ data, currentTheme }) => {
             ))}
             <Button 
               className="bg-primary text-primary-foreground hover:bg-primary/90"
-              onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             >
               Admission
             </Button>
@@ -102,7 +113,7 @@ const Navbar = ({ data, currentTheme }) => {
                   className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
                   onClick={() => {
                     setIsOpen(false);
-                    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
                   }}
                 >
                   Admission

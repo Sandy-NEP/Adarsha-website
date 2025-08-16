@@ -1,7 +1,31 @@
 import React from "react";
 import { Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
 
-const Footer = ({ data }) => {
+interface ContactInfo {
+  phone: string;
+  email: string;
+  address: string;
+}
+
+interface Developer {
+  name: string;
+  email: string;
+}
+
+interface SchoolData {
+  name: string;
+  contact: ContactInfo;
+  logo: string;
+  location: string;
+  developer: Developer;
+}
+
+interface FooterProps {
+  data: SchoolData;
+  currentTheme?: string;
+}
+
+const Footer: React.FC<FooterProps> = ({ data }) => {
   const currentYear = new Date().getFullYear();
   const socialLinks = [
     { icon: <Facebook size={20} />, href: "https://facebook.com/adarshasecondaryschoolofficial", name: "Facebook" },

@@ -3,7 +3,30 @@ import { motion } from "framer-motion";
 import { FileText, CheckCircle, Clock, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const Admissions = ({ data }) => {
+interface AdmissionRequirements {
+  [key: string]: string[];
+}
+
+interface AdmissionDeadlines {
+  [key: string]: string;
+}
+
+interface AdmissionsData {
+  process: string[];
+  requirements: AdmissionRequirements;
+  deadlines: AdmissionDeadlines;
+}
+
+interface SchoolData {
+  admissions: AdmissionsData;
+}
+
+interface AdmissionsProps {
+  data: SchoolData;
+  currentTheme?: string;
+}
+
+const Admissions: React.FC<AdmissionsProps> = ({ data }) => {
   return (
     <section id="admissions" className="py-20 bg-gradient-to-b from-background/95 to-background">
       <div className="container mx-auto px-4">
@@ -123,7 +146,7 @@ const Admissions = ({ data }) => {
               <Button 
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}
+                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Contact Admissions
               </Button>

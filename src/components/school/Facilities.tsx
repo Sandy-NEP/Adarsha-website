@@ -2,7 +2,21 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Building, FlaskConical, Laptop, Library, Users, Utensils } from "lucide-react";
 
-const iconMap = {
+interface Facility {
+  name: string;
+  description: string;
+}
+
+interface SchoolData {
+  facilities: Facility[];
+}
+
+interface FacilitiesProps {
+  data: SchoolData;
+  currentTheme?: string;
+}
+
+const iconMap: Record<string, React.ReactElement> = {
   "Modern Classrooms": <Building className="h-8 w-8 text-primary" />,
   "Science Labs": <FlaskConical className="h-8 w-8 text-primary" />,
   "Computer Lab": <Laptop className="h-8 w-8 text-primary" />,
@@ -11,7 +25,7 @@ const iconMap = {
   "Cafeteria": <Utensils className="h-8 w-8 text-primary" />,
 };
 
-const Facilities = ({ data }) => {
+const Facilities: React.FC<FacilitiesProps> = ({ data }) => {
   return (
     <section id="facilities" className="py-20 bg-background/90">
       <div className="container mx-auto px-4">
@@ -29,7 +43,7 @@ const Facilities = ({ data }) => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {data.facilities.map((facility, index) => (
+          {data.facilities.map((facility: Facility, index: number) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.9 }}

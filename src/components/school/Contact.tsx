@@ -1,12 +1,31 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input.jsx";
-import { Textarea } from "@/components/ui/textarea.jsx";
-import { Label } from "@/components/ui/label.jsx";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Send } from "lucide-react";
 
-const Contact = ({ data, onSubmit }) => {
+interface ContactInfo {
+  phone: string;
+  contactPerson: string;
+  email: string;
+  address: string;
+}
+
+interface SchoolData {
+  contact: ContactInfo;
+  mapUrl: string;
+  location: string;
+}
+
+interface ContactProps {
+  data: SchoolData;
+  onSubmit: (formData: any) => void;
+  currentTheme?: string;
+}
+
+const Contact: React.FC<ContactProps> = ({ data, onSubmit }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,12 +33,12 @@ const Contact = ({ data, onSubmit }) => {
     message: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onSubmit(formData);
     setFormData({ name: "", email: "", subject: "", message: "" });
@@ -90,7 +109,7 @@ const Contact = ({ data, onSubmit }) => {
                     width="100%"
                     height="300"
                     style={{ border:0 }}
-                    allowFullScreen=""
+                    allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Adarsha Secondary School Location"
@@ -151,7 +170,7 @@ const Contact = ({ data, onSubmit }) => {
                 <Textarea
                   name="message"
                   id="message"
-                  rows="5"
+                  rows={5}
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Your message..."

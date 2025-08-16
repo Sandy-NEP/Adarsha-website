@@ -5,7 +5,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu.jsx";
+} from "@/components/ui/dropdown-menu";
 import { Sun, Moon, Laptop, Palette } from "lucide-react";
 
 const themes = [
@@ -18,9 +18,14 @@ const themes = [
   { name: "Sunset", value: "sunset", icon: <Palette className="mr-2 h-4 w-4" /> },
 ];
 
-const ThemeSwitcher = ({ currentTheme, setCurrentTheme }) => {
+interface ThemeSwitcherProps {
+  currentTheme: string;
+  setCurrentTheme: (theme: string) => void;
+}
+
+const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ currentTheme, setCurrentTheme }) => {
   
-  const handleThemeChange = (themeValue) => {
+  const handleThemeChange = (themeValue: string) => {
     if (themeValue === "system") {
       const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       setCurrentTheme(systemPrefersDark ? "dark" : "light");

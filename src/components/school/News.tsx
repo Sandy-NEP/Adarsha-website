@@ -2,7 +2,23 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Calendar, Trophy, Newspaper } from "lucide-react";
 
-const News = ({ data }) => {
+interface NewsItem {
+  title: string;
+  date: string;
+  description: string;
+  image: string;
+}
+
+interface SchoolData {
+  news: NewsItem[];
+}
+
+interface NewsProps {
+  data: SchoolData;
+  currentTheme?: string;
+}
+
+const News: React.FC<NewsProps> = ({ data }) => {
   return (
     <section id="news" className="py-20 bg-gradient-to-b from-background to-background/95">
       <div className="container mx-auto px-4">

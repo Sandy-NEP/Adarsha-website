@@ -3,7 +3,21 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-const Hero = ({ data }) => {
+interface SchoolData {
+  name: string;
+  tagline: string;
+  logo: string;
+  enrollment: string;
+  established: string;
+  levels: string;
+}
+
+interface HeroProps {
+  data: SchoolData;
+  currentTheme?: string;
+}
+
+const Hero: React.FC<HeroProps> = ({ data }) => {
   return (
     <section className="hero-section">
       <div className="absolute inset-0 overflow-hidden">
@@ -54,14 +68,14 @@ const Hero = ({ data }) => {
           >
             <button
               className="btn-primary"
-              onClick={() => document.getElementById("about").scrollIntoView({ behavior: "smooth" })}
+              onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
             >
               Learn More
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             <button
               className="btn-secondary"
-              onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             >
               Contact Us
             </button>

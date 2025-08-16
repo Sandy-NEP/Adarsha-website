@@ -1,26 +1,133 @@
-//app.jsx
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Toaster } from "@/components/ui/toaster";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
-import Navbar from "@/components/school/Navbar.jsx";
-import Hero from "@/components/school/Hero.jsx";
-import About from "@/components/school/About.jsx";
-import Facilities from "@/components/school/Facilities.jsx";
-import Academics from "@/components/school/Academics.jsx";
-import Staff from "@/components/school/Staff.jsx";
-import News from "@/components/school/News.jsx";
-import Admissions from "@/components/school/Admissions.jsx";
-import Alumni from "@/components/school/Alumni.jsx";
-import Gallery from "@/components/school/Gallery.jsx";
-import Contact from "@/components/school/Contact.jsx";
-import Footer from "@/components/school/Footer.jsx";
-import BuyMeACoffeeModal from "@/components/school/BuyMeACoffeeModal.jsx";
-import ThemeSwitcher from "@/components/school/ThemeSwitcher.jsx";
+import Navbar from "@/components/school/Navbar";
+import Hero from "@/components/school/Hero";
+import About from "@/components/school/About";
+import Facilities from "@/components/school/Facilities";
+import Academics from "@/components/school/Academics";
+import Staff from "@/components/school/Staff";
+import News from "@/components/school/News";
+import Admissions from "@/components/school/Admissions";
+import Alumni from "@/components/school/Alumni";
+import Gallery from "@/components/school/Gallery";
+import Contact from "@/components/school/Contact";
+import Footer from "@/components/school/Footer";
+import BuyMeACoffeeModal from "@/components/school/BuyMeACoffeeModal";
+import ThemeSwitcher from "@/components/school/ThemeSwitcher";
 import { ChevronUp, Coffee } from "lucide-react";
 
-const schoolData = {
+interface ContactInfo {
+  phone: string;
+  contactPerson: string;
+  email: string;
+  address: string;
+}
+
+interface Facility {
+  name: string;
+  description: string;
+}
+
+interface Program {
+  level: string;
+  description: string;
+}
+
+interface AcademicsData {
+  programs: Program[];
+  features: string[];
+}
+
+interface Academics {
+  programs: Program[];
+  features: string[];
+}
+
+interface GalleryItem {
+  src: string;
+  alt: string;
+  category: string;
+}
+
+interface StaffMember {
+  name: string;
+  position: string;
+  qualification: string;
+  experience: string;
+  image: string;
+}
+
+interface NewsItem {
+  title: string;
+  date: string;
+  description: string;
+  image: string;
+}
+
+interface AdmissionRequirements {
+  [key: string]: string[];
+}
+
+interface AdmissionDeadlines {
+  [key: string]: string;
+}
+
+interface AdmissionsData {
+  process: string[];
+  requirements: AdmissionRequirements;
+  deadlines: AdmissionDeadlines;
+}
+
+interface AlumniMember {
+  name: string;
+  graduation: string;
+  achievement: string;
+  image: string;
+}
+
+interface PaymentOptions {
+  esewa: string;
+  bank: {
+    name: string;
+    acc: string;
+  };
+  khalti: string;
+}
+
+interface Developer {
+  name: string;
+  title: string;
+  email: string;
+  phone: string;
+  paymentOptions: PaymentOptions;
+}
+
+interface SchoolData {
+  name: string;
+  tagline: string;
+  location: string;
+  established: string;
+  enrollment: string;
+  levels: string;
+  affiliation: string;
+  contact: ContactInfo;
+  mapUrl: string;
+  logo: string;
+  heroImage: string;
+  facilities: Facility[];
+  academics: AcademicsData;
+  gallery: GalleryItem[];
+  staff: StaffMember[];
+  news: NewsItem[];
+  admissions: AdmissionsData;
+  alumni: AlumniMember[];
+  developer: Developer;
+}
+
+const schoolData: SchoolData = {
   name: "Adarsha Secondary School",
   tagline: "Excellence in Education",
   location: "Sanothimi, Madhyapur Thimi Municipality, Bhaktapur, Nepal",
@@ -168,7 +275,7 @@ const schoolData = {
   }
 };
 
-function App() {
+export default function Home() {
   const { toast } = useToast();
   const [isCoffeeModalOpen, setIsCoffeeModalOpen] = useState(false);
   const [currentTheme, setCurrentTheme] = useState('default');
@@ -177,7 +284,7 @@ function App() {
     document.documentElement.className = currentTheme;
   }, [currentTheme]);
 
-  const handleContactSubmit = (formData) => {
+  const handleContactSubmit = (formData: any) => {
     toast({
       title: "Message Sent!",
       description: "Thank you for contacting us. We will get back to you soon.",
@@ -235,5 +342,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

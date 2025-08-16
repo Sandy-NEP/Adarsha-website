@@ -5,10 +5,27 @@ import { Button } from "@/components/ui/button";
 import { X, Coffee, Copy } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
-const BuyMeACoffeeModal = ({ isOpen, onClose, paymentOptions, developerName }) => {
+interface PaymentOptions {
+  esewa?: string;
+  khalti?: string;
+  bank?: {
+    name: string;
+    acc: string;
+  };
+}
+
+interface BuyMeACoffeeModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  paymentOptions: PaymentOptions;
+  developerName: string;
+  currentTheme?: string;
+}
+
+const BuyMeACoffeeModal: React.FC<BuyMeACoffeeModalProps> = ({ isOpen, onClose, paymentOptions, developerName }) => {
   const { toast } = useToast();
 
-  const copyToClipboard = (text, fieldName) => {
+  const copyToClipboard = (text: string, fieldName: string) => {
     navigator.clipboard.writeText(text);
     toast({
       title: "Copied to Clipboard!",
@@ -41,7 +58,7 @@ const BuyMeACoffeeModal = ({ isOpen, onClose, paymentOptions, developerName }) =
                   <p className="text-sm text-muted-foreground">eSewa ID</p>
                   <p className="font-semibold text-foreground">{paymentOptions.esewa}</p>
                 </div>
-                <Button variant="ghost" size="icon" onClick={() => copyToClipboard(paymentOptions.esewa, "eSewa ID")}>
+                <Button variant="ghost" size="icon" onClick={() => copyToClipboard(paymentOptions.esewa!, "eSewa ID")}>
                   <Copy className="h-5 w-5 text-primary" />
                 </Button>
               </div>
@@ -56,7 +73,7 @@ const BuyMeACoffeeModal = ({ isOpen, onClose, paymentOptions, developerName }) =
                   <p className="text-sm text-muted-foreground">Khalti ID</p>
                   <p className="font-semibold text-foreground">{paymentOptions.khalti}</p>
                 </div>
-                <Button variant="ghost" size="icon" onClick={() => copyToClipboard(paymentOptions.khalti, "Khalti ID")}>
+                <Button variant="ghost" size="icon" onClick={() => copyToClipboard(paymentOptions.khalti!, "Khalti ID")}>
                   <Copy className="h-5 w-5 text-primary" />
                 </Button>
               </div>
@@ -71,7 +88,7 @@ const BuyMeACoffeeModal = ({ isOpen, onClose, paymentOptions, developerName }) =
                   <p className="text-sm text-muted-foreground">{paymentOptions.bank.name}</p>
                   <p className="font-semibold text-foreground">{paymentOptions.bank.acc}</p>
                 </div>
-                <Button variant="ghost" size="icon" onClick={() => copyToClipboard(paymentOptions.bank.acc, "Bank Account")}>
+                <Button variant="ghost" size="icon" onClick={() => copyToClipboard(paymentOptions.bank!.acc, "Bank Account")}>
                   <Copy className="h-5 w-5 text-primary" />
                 </Button>
               </div>

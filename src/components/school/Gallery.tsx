@@ -7,7 +7,22 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
-const Gallery = ({ data }) => {
+interface GalleryItem {
+  src: string;
+  alt: string;
+  category: string;
+}
+
+interface SchoolData {
+  gallery: GalleryItem[];
+}
+
+interface GalleryProps {
+  data: SchoolData;
+  currentTheme?: string;
+}
+
+const Gallery: React.FC<GalleryProps> = ({ data }) => {
   const galleryImages = [
     { src: "adarsha.png", alt: "School campus view" },
     { src: "kabaddi.jpg", alt: "Students in graduation gowns" },

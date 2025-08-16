@@ -2,6 +2,23 @@ import { useState, useEffect } from "react"
 
 const TOAST_LIMIT = 1
 
+interface ToastProps {
+  id?: string;
+  title?: string;
+  description?: string;
+  action?: React.ReactNode;
+  duration?: number;
+  variant?: "default" | "destructive";
+  className?: string;
+  dismiss?: () => void;
+}
+
+interface ToastState {
+  toasts: ToastProps[];
+}
+
+type ToastListener = (state: ToastState) => void;
+
 let count = 0
 function generateId() {
   count = (count + 1) % Number.MAX_VALUE
@@ -10,13 +27,13 @@ function generateId() {
 
 const toastStore = {
   state: {
-    toasts: [],
-  },
-  listeners: [],
+    toasts: [] as ToastProps[],
+  } as ToastState,
+  listeners: [] as ToastListener[],
   
   getState: () => toastStore.state,
   
-  setState: (nextState) => {
+  setState: (nextState: ToastState | ((state: ToastState) => ToastState)) => {
     if (typeof nextState === 'function') {
       toastStore.state = nextState(toastStore.state)
     } else {
@@ -26,7 +43,7 @@ const toastStore = {
     toastStore.listeners.forEach(listener => listener(toastStore.state))
   },
   
-  subscribe: (listener) => {
+  subscribe: (listener: ToastListener) => {
     toastStore.listeners.push(listener)
     return () => {
       toastStore.listeners = toastStore.listeners.filter(l => l !== listener)
@@ -34,23 +51,23 @@ const toastStore = {
   }
 }
 
-export const toast = ({ ...props }) => {
+export const toast = ({ ...props }: Omit<ToastProps, 'id' | 'dismiss'>) => {
   const id = generateId()
 
-  const update = (props) =>
-    toastStore.setState((state) => ({
+  const update = (props: Partial<ToastProps>) =>
+    toastStore.setState((state: ToastState) => ({
       ...state,
-      toasts: state.toasts.map((t) =>
+      toasts: state.toasts.map((t: ToastProps) =>
         t.id === id ? { ...t, ...props } : t
       ),
     }))
 
-  const dismiss = () => toastStore.setState((state) => ({
+  const dismiss = () => toastStore.setState((state: ToastState) => ({
     ...state,
-    toasts: state.toasts.filter((t) => t.id !== id),
+    toasts: state.toasts.filter((t: ToastProps) => t.id !== id),
   }))
 
-  toastStore.setState((state) => ({
+  toastStore.setState((state: ToastState) => ({
     ...state,
     toasts: [
       { ...props, id, dismiss },
@@ -69,7 +86,7 @@ export function useToast() {
   const [state, setState] = useState(toastStore.getState())
   
   useEffect(() => {
-    const unsubscribe = toastStore.subscribe((state) => {
+    const unsubscribe = toastStore.subscribe((state: ToastState) => {
       setState(state)
     })
     
@@ -77,15 +94,15 @@ export function useToast() {
   }, [])
   
   useEffect(() => {
-    const timeouts = []
+    const timeouts: NodeJS.Timeout[] = []
 
-    state.toasts.forEach((toast) => {
+    state.toasts.forEach((toast: ToastProps) => {
       if (toast.duration === Infinity) {
         return
       }
 
       const timeout = setTimeout(() => {
-        toast.dismiss()
+        toast.dismiss?.()
       }, toast.duration || 5000)
 
       timeouts.push(timeout)

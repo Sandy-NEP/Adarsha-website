@@ -2,7 +2,26 @@ import React from "react";
 import { motion } from "framer-motion";
 import { BookOpen, CheckCircle, Users, Brain } from "lucide-react";
 
-const Academics = ({ data }) => {
+interface Program {
+  level: string;
+  description: string;
+}
+
+interface AcademicsData {
+  programs: Program[];
+  features: string[];
+}
+
+interface SchoolData {
+  academics: AcademicsData;
+}
+
+interface AcademicsProps {
+  data: SchoolData;
+  currentTheme?: string;
+}
+
+const Academics: React.FC<AcademicsProps> = ({ data }) => {
   return (
     <section id="academics" className="py-20 bg-gradient-to-b from-background to-background/95">
       <div className="container mx-auto px-4">

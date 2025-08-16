@@ -2,7 +2,24 @@ import React from "react";
 import { motion } from "framer-motion";
 import { GraduationCap, Award, Clock } from "lucide-react";
 
-const Staff = ({ data }) => {
+interface StaffMember {
+  name: string;
+  position: string;
+  qualification: string;
+  experience: string;
+  image: string;
+}
+
+interface SchoolData {
+  staff: StaffMember[];
+}
+
+interface StaffProps {
+  data: SchoolData;
+  currentTheme?: string;
+}
+
+const Staff: React.FC<StaffProps> = ({ data }) => {
   return (
     <section id="staff" className="py-20 bg-gradient-to-b from-background/95 to-background">
       <div className="container mx-auto px-4">

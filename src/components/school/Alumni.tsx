@@ -2,7 +2,23 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Star, GraduationCap, Award } from "lucide-react";
 
-const Alumni = ({ data }) => {
+interface AlumniMember {
+  name: string;
+  graduation: string;
+  achievement: string;
+  image: string;
+}
+
+interface SchoolData {
+  alumni: AlumniMember[];
+}
+
+interface AlumniProps {
+  data: SchoolData;
+  currentTheme?: string;
+}
+
+const Alumni: React.FC<AlumniProps> = ({ data }) => {
   return (
     <section id="alumni" className="py-20 bg-gradient-to-b from-background to-background/95">
       <div className="container mx-auto px-4">
