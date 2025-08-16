@@ -24,15 +24,15 @@ interface GalleryProps {
 
 const Gallery: React.FC<GalleryProps> = ({ data }) => {
   const galleryImages = [
-    { src: "adarsha.png", alt: "School campus view" },
-    { src: "kabaddi.jpg", alt: "Students in graduation gowns" },
-    { src: "kabaddi2.jpg", alt: "University lecture hall" },
-    { src: "kabaddi3.jpg", alt: "Classroom with students" },
-    { src: "karate.jpg", alt: "Students working in a library" },
+    { src: "/adarsha.png", alt: "School campus view" },
+    { src: "/kabaddi.jpg", alt: "Students in graduation gowns" },
+    { src: "/kabaddi2.jpg", alt: "University lecture hall" },
+    { src: "/kabaddi3.jpg", alt: "Classroom with students" },
+    { src: "/karate.jpg", alt: "Students working in a library" },
 
-    { src: "school1.jpg", alt: "Students working in a library" },
-    { src: "picnic.jpg", alt: "Students working in a library" },
-    { src: "kabaddi1.jpg", alt: "Students working in a library" },
+    { src: "/school1.jpg", alt: "Students working in a library" },
+    { src: "/picnic.jpg", alt: "Students working in a library" },
+    { src: "/kabaddi1.jpg", alt: "Students working in a library" },
     ...data.gallery
   ];
 

@@ -21,7 +21,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
   return (
     <section className="hero-section">
       <div className="absolute inset-0 overflow-hidden">
-        <img  alt="School building with students" className="w-full h-full object-cover opacity-1" src="public/adarsha.png" />
+        <img  alt="School building with students" className="w-full h-full object-cover opacity-1" src="/adarsha.png" />
       </div>
       
       <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background"></div>

@@ -11,181 +11,181 @@
 
 @layer base {
   :root, .theme-default {
-    --background: 0 0% 100%; /* Pure white background */
-    --foreground: 220 15% 20%; /* Warm dark gray for better readability */
-    --card: 0 0% 98%; /* Very light gray for cards */
-    --card-foreground: 220 15% 20%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 20%;
-    --primary: 210 100% 50%; /* Modern vibrant blue */
-    --primary-foreground: 0 0% 100%; /* White text on blue */
-    --secondary: 210 80% 60%; /* Lighter blue for secondary */
+    --background: 180 25% 98%; /* Soft turquoise-tinted white */
+    --foreground: 200 30% 15%; /* Deep teal-gray text */
+    --card: 180 20% 96%; /* Light turquoise cards */
+    --card-foreground: 200 30% 15%;
+    --popover: 180 25% 98%;
+    --popover-foreground: 200 30% 15%;
+    --primary: 175 85% 45%; /* Modern turquoise */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 70% 60%; /* Seafoam green */
     --secondary-foreground: 0 0% 100%;
-    --muted: 220 10% 95%; /* Subtle warm gray for muted elements */
-    --muted-foreground: 220 10% 50%;
-    --accent: 45 100% 55%; /* Warm golden accent */
-    --accent-foreground: 220 15% 20%;
-    --destructive: 0 85% 60%; /* Softer red for destructive actions */
+    --muted: 180 15% 92%; /* Subtle turquoise-gray */
+    --muted-foreground: 180 20% 45%;
+    --accent: 45 95% 60%; /* Warm cream-gold accent */
+    --accent-foreground: 200 30% 15%;
+    --destructive: 0 75% 55%; /* Coral red */
     --destructive-foreground: 0 0% 100%;
-    --border: 220 10% 88%; /* Subtle warm border */
-    --input: 220 10% 97%; /* Light warm input background */
-    --ring: 210 100% 50%; /* Blue focus rings */
+    --border: 180 15% 85%; /* Soft turquoise border */
+    --input: 180 20% 94%; /* Light turquoise input */
+    --ring: 175 85% 45%; /* Turquoise focus rings */
     --radius: 0.75rem; 
-    --text-gradient-from: theme('colors.blue.600');
-    --text-gradient-via: theme('colors.blue.500');
-    --text-gradient-to: theme('colors.indigo.600');
-    --button-gradient-from: theme('colors.blue.600');
-    --button-gradient-to: theme('colors.indigo.700');
-    --font-body: 'Inter', sans-serif;
-    --font-heading: 'Unbounded', cursive;
-  }
-
-  .theme-cyber {
-    --background: 240 15% 8%; /* Deep sophisticated dark blue */
-    --foreground: 160 60% 85%; /* Softer mint green */
-    --card: 240 12% 12%; 
-    --card-foreground: 160 60% 85%;
-    --popover: 240 15% 8%;
-    --popover-foreground: 160 60% 85%;
-    --primary: 160 80% 55%; /* Modern teal green */
-    --primary-foreground: 240 15% 8%;
-    --secondary: 180 70% 60%; /* Aqua accent */
-    --secondary-foreground: 240 15% 8%;
-    --muted: 240 10% 18%;
-    --muted-foreground: 160 40% 65%;
-    --accent: 200 100% 70%; /* Bright cyan accent */
-    --accent-foreground: 240 15% 8%;
-    --destructive: 0 80% 65%; /* Softer red */
-    --destructive-foreground: 240 15% 8%;
-    --border: 160 30% 25%;
-    --input: 240 12% 10%;
-    --ring: 160 80% 60%;
-    --radius: 0.5rem; /* Slightly softer edges */
-    --text-gradient-from: theme('colors.teal.400');
-    --text-gradient-via: theme('colors.cyan.400');
-    --text-gradient-to: theme('colors.emerald.500');
+    --text-gradient-from: theme('colors.teal.500');
+    --text-gradient-via: theme('colors.cyan.500');
+    --text-gradient-to: theme('colors.emerald.600');
     --button-gradient-from: theme('colors.teal.600');
     --button-gradient-to: theme('colors.emerald.700');
     --font-body: 'Inter', sans-serif;
     --font-heading: 'Unbounded', cursive;
   }
 
-  .theme-solar {
-    --background: 0 0% 100%; /* Clean white background */
-    --foreground: 25 20% 15%; /* Warm dark brown */
-    --card: 35 30% 96%; /* Warm cream for cards */
-    --card-foreground: 25 20% 15%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 25 20% 15%;
-    --primary: 25 85% 55%; /* Warm coral orange */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 45 80% 60%; /* Golden yellow */
-    --secondary-foreground: 25 20% 15%;
-    --muted: 35 20% 92%; /* Subtle warm gray */
-    --muted-foreground: 25 15% 45%;
-    --accent: 15 90% 65%; /* Warm peach accent */
-    --accent-foreground: 25 20% 15%;
-    --destructive: 0 75% 60%; /* Softer red */
-    --destructive-foreground: 0 0% 100%;
-    --border: 35 15% 85%; /* Warm light border */
-    --input: 35 25% 95%; /* Warm input background */
-    --ring: 25 85% 55%; /* Orange focus rings */
-    --radius: 0.75rem;
-    --text-gradient-from: theme('colors.orange.500');
-    --text-gradient-via: theme('colors.amber.500');
-    --text-gradient-to: theme('colors.yellow.600');
-    --button-gradient-from: theme('colors.orange.600');
-    --button-gradient-to: theme('colors.amber.700');
-    --font-body: 'Inter', sans-serif;
-    --font-heading: 'Unbounded', cursive;
-  }
-
-  .theme-oceanic {
-    --background: 220 25% 96%; /* Soft blue-gray background */
-    --foreground: 220 20% 15%; /* Deep blue-gray text */
-    --card: 220 30% 98%; /* Very light blue cards */
-    --card-foreground: 220 20% 15%;
-    --popover: 220 25% 96%;
-    --popover-foreground: 220 20% 15%;
-    --primary: 200 85% 50%; /* Ocean blue */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 190 70% 55%; /* Turquoise */
-    --secondary-foreground: 0 0% 100%;
-    --muted: 220 15% 90%; /* Subtle blue-gray */
-    --muted-foreground: 220 15% 45%;
-    --accent: 170 80% 60%; /* Aqua accent */
-    --accent-foreground: 220 20% 15%;
-    --destructive: 0 75% 60%; /* Coral red */
-    --destructive-foreground: 0 0% 100%;
-    --border: 220 20% 85%; /* Light blue border */
-    --input: 220 25% 95%; /* Light blue input */
-    --ring: 200 85% 50%; /* Ocean blue focus */
-    --radius: 0.75rem;
-    --text-gradient-from: theme('colors.blue.500');
-    --text-gradient-via: theme('colors.cyan.500');
-    --text-gradient-to: theme('colors.teal.600');
+  .theme-cyber {
+    --background: 220 40% 8%; /* Deep navy blue */
+    --foreground: 200 80% 85%; /* Electric blue-white */
+    --card: 220 35% 12%; 
+    --card-foreground: 200 80% 85%;
+    --popover: 220 40% 8%;
+    --popover-foreground: 200 80% 85%;
+    --primary: 200 100% 60%; /* Electric blue */
+    --primary-foreground: 220 40% 8%;
+    --secondary: 210 90% 70%; /* Bright sky blue */
+    --secondary-foreground: 220 40% 8%;
+    --muted: 220 30% 18%;
+    --muted-foreground: 200 60% 70%;
+    --accent: 0 0% 85%; /* Silver accent */
+    --accent-foreground: 220 40% 8%;
+    --destructive: 0 85% 65%; /* Electric red */
+    --destructive-foreground: 220 40% 8%;
+    --border: 200 50% 25%;
+    --input: 220 35% 10%;
+    --ring: 200 100% 60%;
+    --radius: 0.25rem; /* Sharp edges for tech feel */
+    --text-gradient-from: theme('colors.blue.400');
+    --text-gradient-via: theme('colors.cyan.400');
+    --text-gradient-to: theme('colors.sky.500');
     --button-gradient-from: theme('colors.blue.600');
     --button-gradient-to: theme('colors.cyan.700');
     --font-body: 'Inter', sans-serif;
     --font-heading: 'Unbounded', cursive;
   }
 
-  .theme-monochrome {
-    --background: 0 0% 98%; /* Clean light gray */
-    --foreground: 0 0% 15%; /* Dark charcoal */
-    --card: 0 0% 100%; /* Pure white cards */
-    --card-foreground: 0 0% 15%;
-    --popover: 0 0% 98%;
-    --popover-foreground: 0 0% 15%;
-    --primary: 0 0% 25%; /* Sophisticated charcoal */
+  .theme-solar {
+    --background: 25 60% 96%; /* Warm sunset cream */
+    --foreground: 15 40% 20%; /* Rich sunset brown */
+    --card: 30 50% 98%; /* Light peach cards */
+    --card-foreground: 15 40% 20%;
+    --popover: 25 60% 96%;
+    --popover-foreground: 15 40% 20%;
+    --primary: 20 90% 55%; /* Sunset orange */
     --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 40%; /* Medium gray */
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 94%; /* Light muted gray */
-    --muted-foreground: 0 0% 50%;
-    --accent: 0 0% 60%; /* Elegant mid-gray accent */
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 70% 55%; /* Classic red for destructive */
+    --secondary: 35 80% 65%; /* Golden peach */
+    --secondary-foreground: 15 40% 20%;
+    --muted: 30 40% 90%;
+    --muted-foreground: 20 30% 50%;
+    --accent: 50 100% 65%; /* Bright golden yellow */
+    --accent-foreground: 15 40% 20%;
+    --destructive: 5 85% 60%; /* Warm red-orange */
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 88%; /* Subtle border */
-    --input: 0 0% 96%; /* Light input background */
-    --ring: 0 0% 25%; /* Charcoal focus ring */
+    --border: 25 35% 82%;
+    --input: 30 45% 92%;
+    --ring: 20 90% 55%;
+    --radius: 0.75rem;
+    --text-gradient-from: theme('colors.orange.500');
+    --text-gradient-via: theme('colors.yellow.500');
+    --text-gradient-to: theme('colors.red.500');
+    --button-gradient-from: theme('colors.orange.600');
+    --button-gradient-to: theme('colors.red.600');
+    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Unbounded', cursive;
+  }
+
+  .theme-oceanic {
+    --background: 210 45% 96%; /* Ocean mist background */
+    --foreground: 220 35% 18%; /* Deep ocean blue text */
+    --card: 210 40% 98%;
+    --card-foreground: 220 35% 18%;
+    --popover: 210 45% 96%;
+    --popover-foreground: 220 35% 18%;
+    --primary: 210 100% 50%; /* Deep ocean blue */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 190 70% 55%; /* Ocean teal */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 25% 88%;
+    --muted-foreground: 210 20% 50%;
+    --accent: 170 80% 50%; /* Sea green accent */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 75% 55%; /* Coral red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 25% 82%;
+    --input: 210 35% 92%;
+    --ring: 210 100% 50%;
+    --radius: 0.75rem;
+    --text-gradient-from: theme('colors.blue.600');
+    --text-gradient-via: theme('colors.teal.500');
+    --text-gradient-to: theme('colors.emerald.600');
+    --button-gradient-from: theme('colors.blue.700');
+    --button-gradient-to: theme('colors.teal.700');
+    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Unbounded', cursive;
+  }
+
+  .theme-monochrome {
+    --background: 0 0% 100%; /* Pure white */
+    --foreground: 0 0% 10%; /* Deep charcoal */
+    --card: 0 0% 98%; /* Off-white cards */
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 0 0% 20%; /* Charcoal primary */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 35%; /* Medium gray */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 95%; /* Light gray */
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 55%; /* Mid-gray accent */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 65% 50%; /* Classic red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 85%; /* Light gray border */
+    --input: 0 0% 97%; /* Very light gray input */
+    --ring: 0 0% 20%; /* Charcoal focus ring */
     --radius: 0.5rem;
-    --text-gradient-from: theme('colors.gray.600');
-    --text-gradient-via: theme('colors.gray.700');
-    --text-gradient-to: theme('colors.gray.800');
-    --button-gradient-from: theme('colors.gray.700');
-    --button-gradient-to: theme('colors.gray.900');
+    --text-gradient-from: theme('colors.gray.700');
+    --text-gradient-via: theme('colors.gray.800');
+    --text-gradient-to: theme('colors.gray.900');
+    --button-gradient-from: theme('colors.gray.800');
+    --button-gradient-to: theme('colors.black');
     --font-body: 'Inter', sans-serif;
     --font-heading: 'Unbounded', cursive;
   }
 
   .theme-retro {
-    --background: 280 20% 12%; /* Deep elegant purple */
-    --foreground: 320 40% 90%; /* Soft pink-white */
-    --card: 280 15% 16%;
-    --card-foreground: 320 40% 90%;
-    --popover: 280 20% 12%;
-    --popover-foreground: 320 40% 90%;
-    --primary: 320 70% 65%; /* Elegant rose pink */
-    --primary-foreground: 280 20% 12%;
-    --secondary: 280 60% 70%; /* Soft lavender */
-    --secondary-foreground: 280 20% 12%;
-    --muted: 280 12% 22%;
-    --muted-foreground: 320 25% 70%;
-    --accent: 200 80% 70%; /* Soft cyan accent */
-    --accent-foreground: 280 20% 12%;
-    --destructive: 0 70% 65%; /* Soft coral red */
-    --destructive-foreground: 280 20% 12%;
-    --border: 300 30% 30%;
-    --input: 280 15% 14%;
-    --ring: 320 70% 65%;
+    --background: 350 30% 95%; /* Warm cream with burgundy hint */
+    --foreground: 350 40% 15%; /* Deep burgundy text */
+    --card: 350 25% 97%;
+    --card-foreground: 350 40% 15%;
+    --popover: 350 30% 95%;
+    --popover-foreground: 350 40% 15%;
+    --primary: 350 70% 45%; /* Rich burgundy */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 80% 60%; /* Warm gold */
+    --secondary-foreground: 350 40% 15%;
+    --muted: 350 20% 88%;
+    --muted-foreground: 350 25% 50%;
+    --accent: 50 90% 55%; /* Bright gold accent */
+    --accent-foreground: 350 40% 15%;
+    --destructive: 0 70% 55%; /* Classic red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 350 20% 80%;
+    --input: 350 25% 92%;
+    --ring: 350 70% 45%;
     --radius: 0.75rem;
-    --text-gradient-from: theme('colors.pink.400');
-    --text-gradient-via: theme('colors.purple.400');
-    --text-gradient-to: theme('colors.indigo.500');
-    --button-gradient-from: theme('colors.pink.600');
-    --button-gradient-to: theme('colors.purple.700');
+    --text-gradient-from: theme('colors.red.700');
+    --text-gradient-via: theme('colors.amber.600');
+    --text-gradient-to: theme('colors.yellow.600');
+    --button-gradient-from: theme('colors.red.700');
+    --button-gradient-to: theme('colors.amber.700');
     --font-body: 'Inter', sans-serif;
     --font-heading: 'Unbounded', cursive;
   }

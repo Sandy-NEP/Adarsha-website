@@ -95,7 +95,7 @@ const Academics: React.FC<AcademicsProps> = ({ data }) => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="mt-10"
             >
-              <img  alt="Students engaged in learning" className="rounded-xl shadow-2xl" src="adarsha1.png" />
+              <img  alt="Students engaged in learning" className="rounded-xl shadow-2xl" src="/adarsha1.png" />
             </motion.div>
           </motion.div>
         </div>

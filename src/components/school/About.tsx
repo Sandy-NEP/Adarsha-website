@@ -76,7 +76,7 @@ const About: React.FC<AboutProps> = ({ data }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <img  alt="Students in classroom" className="rounded-xl shadow-2xl" src="public/assembly.jpg" />
+            <img  alt="Students in classroom" className="rounded-xl shadow-2xl" src="/assembly.jpg" />
           </motion.div>
 
           <motion.div
