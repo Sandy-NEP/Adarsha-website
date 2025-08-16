@@ -11,183 +11,183 @@
 
 @layer base {
   :root, .theme-default {
-    --background: 0 0% 100%; /* White background */
-    --foreground: 0 0% 15%; /* Dark text for readability */
-    --card: 0 0% 98%; /* Very light gray for cards */
-    --card-foreground: 0 0% 15%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 15%;
-    --primary: 358 70% 33%; /* Red from las.edu.np */
-    --primary-foreground: 0 0% 100%; /* White text on red */
-    --secondary: 358 50% 45%; /* Lighter red for secondary */
+    --background: 180 25% 98%; /* Soft turquoise-tinted white */
+    --foreground: 200 30% 15%; /* Deep teal-gray text */
+    --card: 180 20% 96%; /* Light turquoise cards */
+    --card-foreground: 200 30% 15%;
+    --popover: 180 25% 98%;
+    --popover-foreground: 200 30% 15%;
+    --primary: 175 85% 45%; /* Modern turquoise */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 70% 60%; /* Seafoam green */
     --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 96%; /* Light gray for muted elements */
-    --muted-foreground: 0 0% 45%;
-    --accent: 358 60% 40%; /* Accent red */
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 70% 50%; /* Keep red for destructive actions */
+    --muted: 180 15% 92%; /* Subtle turquoise-gray */
+    --muted-foreground: 180 20% 45%;
+    --accent: 45 95% 60%; /* Warm cream-gold accent */
+    --accent-foreground: 200 30% 15%;
+    --destructive: 0 75% 55%; /* Coral red */
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 90%; /* Light border */
-    --input: 0 0% 98%; /* Light input background */
-    --ring: 358 70% 33%; /* Red focus rings */
+    --border: 180 15% 85%; /* Soft turquoise border */
+    --input: 180 20% 94%; /* Light turquoise input */
+    --ring: 175 85% 45%; /* Turquoise focus rings */
     --radius: 0.75rem; 
-    --text-gradient-from: theme('colors.red.600');
-    --text-gradient-via: theme('colors.red.500');
-    --text-gradient-to: theme('colors.red.700');
-    --button-gradient-from: theme('colors.red.600');
-    --button-gradient-to: theme('colors.red.700');
+    --text-gradient-from: theme('colors.teal.500');
+    --text-gradient-via: theme('colors.cyan.500');
+    --text-gradient-to: theme('colors.emerald.600');
+    --button-gradient-from: theme('colors.teal.600');
+    --button-gradient-to: theme('colors.emerald.700');
     --font-body: 'Inter', sans-serif;
     --font-heading: 'Unbounded', cursive;
   }
 
   .theme-cyber {
-    --background: 220 30% 5%; /* Very dark desaturated blue */
-    --foreground: 120 100% 85%; /* Bright green */
-    --card: 220 25% 10%; 
-    --card-foreground: 120 100% 85%;
-    --popover: 220 30% 5%;
-    --popover-foreground: 120 100% 85%;
-    --primary: 120 100% 50%; /* Bright Green */
-    --primary-foreground: 220 30% 10%;
-    --secondary: 120 80% 60%; /* Lighter Green */
-    --secondary-foreground: 220 30% 10%;
-    --muted: 220 20% 15%;
-    --muted-foreground: 120 70% 70%;
-    --accent: 120 90% 55%;
-    --accent-foreground: 220 30% 10%;
-    --destructive: 0 100% 50%; /* Bright Red */
-    --destructive-foreground: 220 30% 10%;
-    --border: 120 50% 30%;
-    --input: 220 20% 8%;
-    --ring: 120 100% 60%;
-    --radius: 0.25rem; /* Sharper edges */
-    --text-gradient-from: theme('colors.green.400');
-    --text-gradient-via: theme('colors.lime.400');
-    --text-gradient-to: theme('colors.emerald.500');
-    --button-gradient-from: theme('colors.green.600');
-    --button-gradient-to: theme('colors.emerald.700');
-    --font-body: 'Courier Prime', monospace;
-    --font-heading: 'VT323', monospace;
+    --background: 220 40% 8%; /* Deep navy blue */
+    --foreground: 200 80% 85%; /* Electric blue-white */
+    --card: 220 35% 12%; 
+    --card-foreground: 200 80% 85%;
+    --popover: 220 40% 8%;
+    --popover-foreground: 200 80% 85%;
+    --primary: 200 100% 60%; /* Electric blue */
+    --primary-foreground: 220 40% 8%;
+    --secondary: 210 90% 70%; /* Bright sky blue */
+    --secondary-foreground: 220 40% 8%;
+    --muted: 220 30% 18%;
+    --muted-foreground: 200 60% 70%;
+    --accent: 0 0% 85%; /* Silver accent */
+    --accent-foreground: 220 40% 8%;
+    --destructive: 0 85% 65%; /* Electric red */
+    --destructive-foreground: 220 40% 8%;
+    --border: 200 50% 25%;
+    --input: 220 35% 10%;
+    --ring: 200 100% 60%;
+    --radius: 0.25rem; /* Sharp edges for tech feel */
+    --text-gradient-from: theme('colors.blue.400');
+    --text-gradient-via: theme('colors.cyan.400');
+    --text-gradient-to: theme('colors.sky.500');
+    --button-gradient-from: theme('colors.blue.600');
+    --button-gradient-to: theme('colors.cyan.700');
+    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Unbounded', cursive;
   }
 
   .theme-solar {
-    --background: 25 15% 10%; /* Dark warm gray / brown */
-    --foreground: 35 80% 90%; /* Light warm yellow/orange */
-    --card: 25 20% 15%;
-    --card-foreground: 35 80% 90%;
-    --popover: 25 15% 10%;
-    --popover-foreground: 35 80% 90%;
-    --primary: 30 100% 55%; /* Bright Orange */
-    --primary-foreground: 25 15% 5%;
-    --secondary: 45 100% 50%; /* Bright Yellow */
-    --secondary-foreground: 25 15% 5%;
-    --muted: 25 25% 20%;
-    --muted-foreground: 35 60% 70%;
-    --accent: 35 90% 60%;
-    --accent-foreground: 25 15% 5%;
-    --destructive: 0 80% 50%; /* Warm Red */
-    --destructive-foreground: 25 15% 5%;
-    --border: 30 40% 30%;
-    --input: 25 20% 12%;
-    --ring: 30 100% 65%;
-    --radius: 0.5rem;
-    --text-gradient-from: theme('colors.orange.400');
-    --text-gradient-via: theme('colors.yellow.400');
-    --text-gradient-to: theme('colors.amber.500');
+    --background: 25 60% 96%; /* Warm sunset cream */
+    --foreground: 15 40% 20%; /* Rich sunset brown */
+    --card: 30 50% 98%; /* Light peach cards */
+    --card-foreground: 15 40% 20%;
+    --popover: 25 60% 96%;
+    --popover-foreground: 15 40% 20%;
+    --primary: 20 90% 55%; /* Sunset orange */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 35 80% 65%; /* Golden peach */
+    --secondary-foreground: 15 40% 20%;
+    --muted: 30 40% 90%;
+    --muted-foreground: 20 30% 50%;
+    --accent: 50 100% 65%; /* Bright golden yellow */
+    --accent-foreground: 15 40% 20%;
+    --destructive: 5 85% 60%; /* Warm red-orange */
+    --destructive-foreground: 0 0% 100%;
+    --border: 25 35% 82%;
+    --input: 30 45% 92%;
+    --ring: 20 90% 55%;
+    --radius: 0.75rem;
+    --text-gradient-from: theme('colors.orange.500');
+    --text-gradient-via: theme('colors.yellow.500');
+    --text-gradient-to: theme('colors.red.500');
     --button-gradient-from: theme('colors.orange.600');
-    --button-gradient-to: theme('colors.amber.700');
-    --font-body: 'Roboto', sans-serif;
-    --font-heading: 'Orbitron', sans-serif;
+    --button-gradient-to: theme('colors.red.600');
+    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Unbounded', cursive;
   }
 
   .theme-oceanic {
-    --background: 210 50% 10%; /* Deep Blue */
-    --foreground: 190 70% 90%; /* Light Cyan/White */
-    --card: 210 45% 15%;
-    --card-foreground: 190 70% 90%;
-    --popover: 210 50% 10%;
-    --popover-foreground: 190 70% 90%;
-    --primary: 200 100% 50%; /* Bright Cyan */
-    --primary-foreground: 210 50% 5%;
-    --secondary: 220 80% 60%; /* Bright Blue */
-    --secondary-foreground: 210 50% 5%;
-    --muted: 210 35% 20%;
-    --muted-foreground: 190 50% 70%;
-    --accent: 195 90% 55%;
-    --accent-foreground: 210 50% 5%;
-    --destructive: 350 80% 55%; /* Coral Red */
-    --destructive-foreground: 210 50% 5%;
-    --border: 200 40% 30%;
-    --input: 210 40% 12%;
-    --ring: 200 100% 60%;
-    --radius: 1rem; /* Softer edges */
-    --text-gradient-from: theme('colors.cyan.400');
-    --text-gradient-via: theme('colors.sky.400');
-    --text-gradient-to: theme('colors.blue.500');
-    --button-gradient-from: theme('colors.cyan.600');
-    --button-gradient-to: theme('colors.blue.700');
-    --font-body: 'Lato', sans-serif;
-    --font-heading: 'Montserrat', sans-serif;
+    --background: 210 45% 96%; /* Ocean mist background */
+    --foreground: 220 35% 18%; /* Deep ocean blue text */
+    --card: 210 40% 98%;
+    --card-foreground: 220 35% 18%;
+    --popover: 210 45% 96%;
+    --popover-foreground: 220 35% 18%;
+    --primary: 210 100% 50%; /* Deep ocean blue */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 190 70% 55%; /* Ocean teal */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 25% 88%;
+    --muted-foreground: 210 20% 50%;
+    --accent: 170 80% 50%; /* Sea green accent */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 75% 55%; /* Coral red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 25% 82%;
+    --input: 210 35% 92%;
+    --ring: 210 100% 50%;
+    --radius: 0.75rem;
+    --text-gradient-from: theme('colors.blue.600');
+    --text-gradient-via: theme('colors.teal.500');
+    --text-gradient-to: theme('colors.emerald.600');
+    --button-gradient-from: theme('colors.blue.700');
+    --button-gradient-to: theme('colors.teal.700');
+    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Unbounded', cursive;
   }
 
   .theme-monochrome {
-    --background: 0 0% 10%; /* Dark Gray */
-    --foreground: 0 0% 90%; /* Light Gray */
-    --card: 0 0% 15%;
-    --card-foreground: 0 0% 90%;
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 90%;
-    --primary: 0 0% 70%; /* Mid Gray */
-    --primary-foreground: 0 0% 5%;
-    --secondary: 0 0% 50%; /* Darker Mid Gray */
-    --secondary-foreground: 0 0% 95%;
-    --muted: 0 0% 25%;
-    --muted-foreground: 0 0% 60%;
-    --accent: 0 0% 80%;
-    --accent-foreground: 0 0% 5%;
-    --destructive: 0 0% 40%; /* Dark Reddish Gray */
-    --destructive-foreground: 0 0% 95%;
-    --border: 0 0% 30%;
-    --input: 0 0% 12%;
-    --ring: 0 0% 75%;
-    --radius: 0.375rem;
-    --text-gradient-from: theme('colors.gray.400');
-    --text-gradient-via: theme('colors.gray.500');
-    --text-gradient-to: theme('colors.gray.600');
-    --button-gradient-from: theme('colors.gray.700');
-    --button-gradient-to: theme('colors.gray.800');
-    --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --font-heading: 'Arial Black', Gadget, sans-serif;
+    --background: 0 0% 100%; /* Pure white */
+    --foreground: 0 0% 10%; /* Deep charcoal */
+    --card: 0 0% 98%; /* Off-white cards */
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 0 0% 20%; /* Charcoal primary */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 35%; /* Medium gray */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 95%; /* Light gray */
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 55%; /* Mid-gray accent */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 65% 50%; /* Classic red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 85%; /* Light gray border */
+    --input: 0 0% 97%; /* Very light gray input */
+    --ring: 0 0% 20%; /* Charcoal focus ring */
+    --radius: 0.5rem;
+    --text-gradient-from: theme('colors.gray.700');
+    --text-gradient-via: theme('colors.gray.800');
+    --text-gradient-to: theme('colors.gray.900');
+    --button-gradient-from: theme('colors.gray.800');
+    --button-gradient-to: theme('colors.black');
+    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Unbounded', cursive;
   }
 
   .theme-retro {
-    --background: 260 50% 8%; /* Very Dark Purple/Blue */
-    --foreground: 330 100% 85%; /* Bright Neon Pink */
-    --card: 260 45% 12%;
-    --card-foreground: 330 100% 85%;
-    --popover: 260 50% 8%;
-    --popover-foreground: 330 100% 85%;
-    --primary: 330 100% 60%; /* Neon Pink */
-    --primary-foreground: 260 50% 10%;
-    --secondary: 180 100% 50%; /* Neon Cyan */
-    --secondary-foreground: 260 50% 10%;
-    --muted: 260 35% 18%;
-    --muted-foreground: 300 70% 70%; /* Neon Purple */
-    --accent: 280 100% 65%; /* Neon Purple */
-    --accent-foreground: 260 50% 10%;
-    --destructive: 45 100% 55%; /* Neon Yellow/Orange */
-    --destructive-foreground: 260 50% 10%;
-    --border: 300 60% 40%;
-    --input: 260 40% 10%;
-    --ring: 330 100% 70%;
-    --radius: 0.5rem;
-    --text-gradient-from: theme('colors.pink.400');
-    --text-gradient-via: theme('colors.purple.500');
-    --text-gradient-to: theme('colors.cyan.400');
-    --button-gradient-from: theme('colors.pink.600');
-    --button-gradient-to: theme('colors.purple.700');
-    --font-body: 'Press Start 2P', cursive;
-    --font-heading: 'Audiowide', cursive;
+    --background: 350 30% 95%; /* Warm cream with burgundy hint */
+    --foreground: 350 40% 15%; /* Deep burgundy text */
+    --card: 350 25% 97%;
+    --card-foreground: 350 40% 15%;
+    --popover: 350 30% 95%;
+    --popover-foreground: 350 40% 15%;
+    --primary: 350 70% 45%; /* Rich burgundy */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 80% 60%; /* Warm gold */
+    --secondary-foreground: 350 40% 15%;
+    --muted: 350 20% 88%;
+    --muted-foreground: 350 25% 50%;
+    --accent: 50 90% 55%; /* Bright gold accent */
+    --accent-foreground: 350 40% 15%;
+    --destructive: 0 70% 55%; /* Classic red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 350 20% 80%;
+    --input: 350 25% 92%;
+    --ring: 350 70% 45%;
+    --radius: 0.75rem;
+    --text-gradient-from: theme('colors.red.700');
+    --text-gradient-via: theme('colors.amber.600');
+    --text-gradient-to: theme('colors.yellow.600');
+    --button-gradient-from: theme('colors.red.700');
+    --button-gradient-to: theme('colors.amber.700');
+    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Unbounded', cursive;
   }
 }
 
